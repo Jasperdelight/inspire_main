@@ -10,7 +10,7 @@ function _drawTodoList() {
   let template = ''
   todoList.forEach(td => template += `
   <li class="selectable text-light">
-  <input ${td.checked ? 'checked' : ''} onchange="app.TodoController.toggleChecked('${td.id}')" type="checkbox" id="todoChecked">
+  <input ${td.completed ? 'checked' : ''} onchange="app.TodoController.toggleChecked('${td.id}')" type="checkbox" id="todoChecked">
   ${td.description} 
   <i onclick="app.TodoController.deleteTodo('${td.id}')" class="mdi mdi-delete"></i>
   </li>

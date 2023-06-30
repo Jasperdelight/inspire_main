@@ -2,6 +2,7 @@ import { AppState } from "../AppState.js";
 import { imageService } from "../services/ImageService.js";
 import { Pop } from "../utils/Pop.js";
 
+
 function _drawBackground() {
   const image = AppState.backgroundImage
   const docBody = document.body

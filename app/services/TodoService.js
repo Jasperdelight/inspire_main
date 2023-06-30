@@ -29,9 +29,14 @@ class TodoService {
       throw new Error('invalid id');
     }
 
-    const todoData = { checked: !foundTodo.checked }
-    const res = await api.put(`api/todos/${tdId}`, todoData)
+    // const todoData = { checked: !foundTodo.checked }
+    // const res = await api.put(`api/todos/${tdId}`, todoData)
+    const res = await api.put(`api/todos/${tdId}`, { completed: !foundTodo.completed })
     console.log('checked todo', res.data)
+    const updatedCheckbox = new Todo(res.data)
+    console.log('new todo?', updatedCheckbox)
+    AppState.todoList.splice(foundTodoIndex, 1, updatedCheckbox)
+    // AppState.emit('todoList')
   }
 
   async deleteTodo(tdId) {

@@ -5,7 +5,13 @@ import { setText } from "../utils/Writer.js";
 
 function _drawWeather() {
   const weather = AppState.weatherData
-  setText('weather', weather)
+  console.log('weather in draw', weather)
+  setText('weather', weather.temp)
+
+  const weatherIcon = AppState.weatherData.icon
+  console.log('weather icon?', weatherIcon)
+
+
 }
 
 export class WeatherController {
