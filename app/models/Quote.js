@@ -8,6 +8,8 @@ export class QuoteOfDay {
 
 
   get quoteTemplate() {
+    return `
 
+    `
   }
 }

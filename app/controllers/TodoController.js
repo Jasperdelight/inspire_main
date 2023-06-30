@@ -5,6 +5,16 @@ import { getFormData } from "../utils/FormHandler.js";
 import { Pop } from "../utils/Pop.js";
 import { setHTML, setText } from "../utils/Writer.js";
 
+
+function _showTodoList() {
+  const account = AppState.account
+  if (!account) {
+    return
+  }
+  const todoList = document.getElementById('myList')
+  todoList.classList.remove('d-none')
+}
+
 function _drawTodoList() {
   let todoList = AppState.todoList
   let template = ''
@@ -17,13 +27,18 @@ function _drawTodoList() {
   `)
   setHTML('myList', template)
 
+  const completedTodos = todoList.filter(td => td.completed)
+  setText('tasksTodo', completedTodos.length)
+
 }
 
 export class TodoController {
   constructor() {
     console.log('todo controller');
 
-
+    AppState.on('account', this.getTodo)
+    AppState.on('account', _showTodoList)
+    AppState.on('account', _drawTodoList)
     AppState.on('todoList', _drawTodoList)
   }
 

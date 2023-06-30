@@ -46,13 +46,12 @@
       <div class="container-fluid">
         <section class="row bg-dark text-white">
 
-          <div class="col-6 d-flex" id="weather">
+          <div onclick="app.WeatherController.toggleWeather()" class="col-6 d-flex selectable" id="weather">
             <div id="weatherIcon">
 
             </div>
 
           </div>
-
 
           <div class="col-6">
           </div>
@@ -64,8 +63,9 @@
       <div class="container-fluid">
         <section class="row">
 
-          <div class="col-8">
-            <h2 class="text-white" id="quote">Quote</h2>
+          <div class="col-8" id="">
+            <h2 id="quote" class="text-white">Quote</h2>
+            <h3 onpointerover="app.QuotesController.showAuthor()" id="authorQuote" class="text-white d-none">Author</h3>
           </div>
 
           <div class="col-4">
@@ -81,9 +81,11 @@
               </form>
             </section>
 
-            <section class="row">
-
-              <ul id="myList">
+            <section class="row text-white">
+              <p>Tasks Done:
+              <p id="tasksTodo"></p>
+              </p>
+              <ul id="myList" class="'d-none">
 
               </ul>
             </section>

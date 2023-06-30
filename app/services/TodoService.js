@@ -36,7 +36,7 @@ class TodoService {
     const updatedCheckbox = new Todo(res.data)
     console.log('new todo?', updatedCheckbox)
     AppState.todoList.splice(foundTodoIndex, 1, updatedCheckbox)
-    // AppState.emit('todoList')
+    AppState.emit('todoList')
   }
 
   async deleteTodo(tdId) {
