@@ -1,9 +1,11 @@
 import { AboutController } from "./controllers/AboutController.js";
+import { QuotesController } from "./controllers/QuotesController.js";
 import { HomeController } from "./controllers/HomeController.js";
 import { ImageController } from "./controllers/ImageController.js";
 import { TodoController } from "./controllers/TodoController.js";
 import { ValuesController } from "./controllers/ValuesController.js";
 import { AboutView } from "./views/AboutView.js";
+import { WeatherController } from "./controllers/WeatherController.js";
 
 /**
  * Register your routes for the application here
@@ -12,7 +14,7 @@ import { AboutView } from "./views/AboutView.js";
 export const router = [
   {
     path: '',
-    controller: [ImageController, TodoController],
+    controller: [ImageController, TodoController, QuotesController, WeatherController],
     view: ''
   },
   {

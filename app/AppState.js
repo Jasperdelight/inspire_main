@@ -19,6 +19,12 @@ class ObservableAppState extends EventEmitter {
   /** @type {import('./models/Todo.js').Todo[]} */
   todoList = []
 
+  /** @type {import('./models/QuoteOfDay.js').QuoteOfDay | null} */
+  quoteOfDay = null
+
+  /** @type {import('./models/WeatherData.js').WeatherData | null} */
+  weatherData = null
+
   // Used to load initial data
   init() {
 
