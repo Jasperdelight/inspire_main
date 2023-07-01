@@ -13,6 +13,8 @@ function _showTodoList() {
   }
   const todoList = document.getElementById('myList')
   todoList.classList.remove('d-none')
+  const todoForm = document.getElementById('listForm')
+  todoForm.classList.remove('d-none')
 }
 
 function _drawTodoList() {
@@ -27,8 +29,8 @@ function _drawTodoList() {
   `)
   setHTML('myList', template)
 
-  const completedTodos = todoList.filter(td => td.completed)
-  setText('tasksTodo', completedTodos.length)
+  const tasksTodo = todoList.filter(td => !td.completed)
+  setText('tasksTodo', tasksTodo.length)
 
 }
 

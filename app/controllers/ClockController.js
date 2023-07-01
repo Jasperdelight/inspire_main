@@ -2,7 +2,8 @@ import { setText } from "../utils/Writer.js";
 
 function _drawClock() {
   const time = new Date()
-  setText('theTime', time)
+  const stringTime = time.toUTCString()
+  setText('theTime', stringTime)
 }
 
 export class ClockController {

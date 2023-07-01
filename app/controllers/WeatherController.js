@@ -9,7 +9,7 @@ import { setHTML, setText } from "../utils/Writer.js";
 function _drawWeather() {
   const weather = AppState.weatherData
   console.log('weather in draw', weather)
-  setText('weather', Math.round(weather.temp - 273.15) + 'C')
+  setText('weather', Math.round(weather.temp - 273.15) + 'C°')
 
   const weatherIcon = AppState.weatherData.icon
   console.log('weather icon?', weatherIcon)
@@ -43,11 +43,11 @@ export class WeatherController {
     if (AppState.weatherTemp == true) {
       const weatherF = (weather.temp - 273.15) * 9 / 5 + 32
       AppState.weatherTemp = false
-      setText('weather', Math.round(weatherF) + 'F')
+      setText('weather', Math.round(weatherF) + 'F°')
     } else {
       const weatherC = (weather.temp - 273.15)
       AppState.weatherTemp = true
-      setText('weather', Math.round(weatherC) + 'C')
+      setText('weather', Math.round(weatherC) + 'C°')
     }
 
 

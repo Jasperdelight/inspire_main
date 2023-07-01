@@ -38,38 +38,43 @@
     </nav>
   </header>
 
-  <!-- SECTION -->
   <main>
 
     <section id="router-view">
 
-      <div class="container-fluid">
-        <section class="row bg-dark text-white">
+      <!-- SECTION WEATHER -->
+      <div class="container-fluid pb-2">
+        <section class="row text-shadow">
 
-          <div onclick="app.WeatherController.toggleWeather()" class="col-6 d-flex selectable" id="weather">
-            <div id="weatherIcon">
+          <div class="col-2 text-end d-flex px-0">
+            <p class="static-card px-2">Boise, ID</p>
 
-            </div>
+            <p onclick="app.WeatherController.toggleWeather()" class="px-2 selectable static-card text-center"
+              id="weather">
+            </p>
 
           </div>
 
-          <div class="col-6">
+          <div class="col-4">
           </div>
-
-
         </section>
       </div>
 
       <div class="container-fluid">
         <section class="row">
 
-          <div class="col-8" id="">
-            <h2 id="quote" class="text-white">Quote</h2>
-            <h3 onpointerover="app.QuotesController.showAuthor()" id="authorQuote" class="text-white d-none">Author</h3>
+          <!-- SECTION Quote -->
+          <div class="col-8  text-shadow" id="">
+            <section class="row justify-content-center">
+              <div class="col-8 dark-card">
+                <h2 id="quote" class="text-white">Quote</h2>
+                <h3 id="authorQuote" class="text-white on-hover">Author</h3>
+              </div>
+            </section>
           </div>
 
-          <div class="col-4">
-            <!-- FORM -->
+          <!--SECTION TODO FORM -->
+          <div id="listForm" class="d-none col-3 text-shadow static-card me-1">
             <section class="row">
 
               <form onsubmit="app.TodoController.createTodo(event)">
@@ -82,22 +87,16 @@
             </section>
 
             <section class="row text-white">
-              <p>Tasks Done:
+              <p>Tasks ToDo:
               <p id="tasksTodo"></p>
               </p>
-              <ul id="myList" class="'d-none">
+              <ul id="myList" class="d-none ms-4">
 
               </ul>
             </section>
 
           </div>
-          <button onclick="app.TodoController.getTodo()">tester</button>
-        </section>
 
-        <section class="row">
-          <div class="col-12 text-white">
-            <p id="theTime"></p>
-          </div>
         </section>
 
 
@@ -108,11 +107,22 @@
     </section>
 
 
+
   </main>
 
-  <!-- SECTION -->
-  <footer class="bg-dark text-light">
-    <div class="text-center no-select">
+  <!-- SECTION TIME -->
+  <footer class=" text-light container-fluid">
+    <section class="row">
+      <div class="col-12 text-shadow text-center ">
+        <section class="row justify-content-center">
+          <div class="col-3 dark-card py-0">
+
+            <p class="mb-0" id="theTime"></p>
+          </div>
+        </section>
+      </div>
+    </section>
+    <div class="row text-center no-select bg-dark">
       <p class="mb-0"><small>Made with 💖 by CodeWorks</small></p>
     </div>
   </footer>
