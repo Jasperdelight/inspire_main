@@ -89,6 +89,7 @@ export class TodoController {
       const todoData = getFormData(form)
       console.log('form data', todoData)
       await todoService.createTodo(todoData)
+      form.reset()
 
 
     } catch (error) {
