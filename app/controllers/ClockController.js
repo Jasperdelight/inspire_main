@@ -8,7 +8,7 @@ function _drawClock() {
 
 export class ClockController {
   constructor() {
-    console.log('clock controller loaded');
+    // console.log('clock controller loaded');
     _drawClock()
     setInterval(_drawClock, 1000)
   }

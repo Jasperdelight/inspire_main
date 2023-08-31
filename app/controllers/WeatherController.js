@@ -8,21 +8,21 @@ import { setHTML, setText } from "../utils/Writer.js";
 
 function _drawWeather() {
   const weather = AppState.weatherData
-  console.log('weather in draw', weather)
+  // console.log('weather in draw', weather)
   setText('weather', Math.round(weather.temp - 273.15) + 'C°')
 
   const weatherIcon = AppState.weatherData.icon
-  console.log('weather icon?', weatherIcon)
+  // console.log('weather icon?', weatherIcon)
   const celc = true
   AppState.weatherTemp = celc
-  console.log('weather t or f', AppState.weatherTemp)
+  // console.log('weather t or f', AppState.weatherTemp)
 
 
 }
 
 export class WeatherController {
   constructor() {
-    console.log('weather troller');
+    // console.log('weather troller');
     this.getWeather()
     AppState.on('weatherData', _drawWeather)
   }

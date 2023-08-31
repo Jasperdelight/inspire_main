@@ -18,12 +18,12 @@
 <body>
   <!-- SECTION -->
   <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light px-2">
+    <nav class="navbar navbar-dark navbar-expand bg-black text-light px-2">
       <a class="navbar-brand" href="#">
-        <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
-          loading="lazy">
-        <span class="ml-2">inspire</span>
+
+        <span class="ml-2">Inspire</span>
       </a>
+        <i class="mdi mdi-image selectable" onclick="app.ImageController.getNewImage()"></i>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -63,7 +63,7 @@
         <section class="row">
 
           <!-- SECTION Quote -->
-          <div class="col-8  text-shadow" id="">
+          <div class="col-8  text-shadow" id="" onclick="app.QuotesController.changeQuote()">
             <section class="row justify-content-center">
               <div class="col-8 dark-card">
                 <h2 id="quote" class="text-white">Quote</h2>
@@ -122,7 +122,7 @@
       </div>
     </section>
     <div class="row text-center no-select bg-dark">
-      <p class="mb-0"><small>Made with 💖 by CodeWorks</small></p>
+
     </div>
   </footer>
 

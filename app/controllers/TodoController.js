@@ -36,7 +36,6 @@ function _drawTodoList() {
 
 export class TodoController {
   constructor() {
-    console.log('todo controller');
 
     AppState.on('account', this.getTodo)
     AppState.on('account', _showTodoList)
@@ -84,10 +83,10 @@ export class TodoController {
   async createTodo(event) {
     try {
       event.preventDefault()
-      console.log("submitted");
+      // console.log("submitted");
       const form = event.target
       const todoData = getFormData(form)
-      console.log('form data', todoData)
+      // console.log('form data', todoData)
       await todoService.createTodo(todoData)
       form.reset()
 

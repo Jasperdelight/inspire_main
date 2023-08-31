@@ -1,5 +1,6 @@
 import { AppState } from "../AppState.js";
 import { quotesService } from "../services/QuotesService.js";
+import { logger } from "../utils/Logger.js";
 import { Pop } from "../utils/Pop.js";
 import { setText } from "../utils/Writer.js";
 
@@ -10,7 +11,7 @@ function _drawQuote() {
 }
 function _drawAuthor() {
   const author = AppState.quoteOfDay.author
-  console.log('author?', author)
+  // console.log('author?', author)
   setText('authorQuote', author)
 }
 
@@ -29,9 +30,17 @@ export class QuotesController {
       Pop.error(error.message)
     }
   }
+  async changeQuote(){
+    try{
+        await quotesService.changeQuote()
+    } catch(error) {
+        Pop.error(error.message);
+    }
+    // logger.log('button pressed')
+  }
   showAuthor() {
     const author = document.getElementById('authorQuote')
-    author.classList.remove('d-none')
+    author?.classList.remove('d-none')
   }
 }
 

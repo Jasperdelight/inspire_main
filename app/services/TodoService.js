@@ -8,7 +8,7 @@ class TodoService {
     const res = await api.post('api/todos', todoData)
     const builtTodo = new Todo(res.data)
     AppState.todoList.push(builtTodo)
-    console.log('list of todos??', AppState.todoList)
+    // console.log('list of todos??', AppState.todoList)
     AppState.emit('todoList')
   }
 
@@ -18,7 +18,7 @@ class TodoService {
     // const todos = res.data
     const builtTodo = res.data.map(t => new Todo(t))
     AppState.todoList = builtTodo
-    console.log('my todos in appstate', builtTodo)
+    // console.log('my todos in appstate', builtTodo)
 
   }
 
@@ -32,16 +32,16 @@ class TodoService {
     // const todoData = { checked: !foundTodo.checked }
     // const res = await api.put(`api/todos/${tdId}`, todoData)
     const res = await api.put(`api/todos/${tdId}`, { completed: !foundTodo.completed })
-    console.log('checked todo', res.data)
+    // console.log('checked todo', res.data)
     const updatedCheckbox = new Todo(res.data)
-    console.log('new todo?', updatedCheckbox)
+    // console.log('new todo?', updatedCheckbox)
     AppState.todoList.splice(foundTodoIndex, 1, updatedCheckbox)
     AppState.emit('todoList')
   }
 
   async deleteTodo(tdId) {
     const res = await api.delete(`api/todos/${tdId}`)
-    console.log(res)
+    // console.log(res)
     const todoIndex = AppState.todoList.findIndex(td => td.id == tdId)
     if (todoIndex == -1) {
       throw new Error('invalid Id')

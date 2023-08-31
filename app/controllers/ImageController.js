@@ -1,5 +1,6 @@
 import { AppState } from "../AppState.js";
 import { imageService } from "../services/ImageService.js";
+import { logger } from "../utils/Logger.js";
 import { Pop } from "../utils/Pop.js";
 
 
@@ -15,7 +16,7 @@ export class ImageController {
 
 
   constructor() {
-    console.log('image controller');
+    // console.log('image controller');
 
     this.drawImage()
     AppState.on('backgroundImage', _drawBackground)
@@ -27,6 +28,13 @@ export class ImageController {
     } catch (error) {
       Pop.error(error.message)
       console.error(error);
+    }
+  }
+  async getNewImage(){
+    try{
+        imageService.getNewImage()
+    } catch(error) {
+        Pop.error(error.message);
     }
   }
 
